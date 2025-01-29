@@ -11,7 +11,7 @@ class Node{
     }
 };
 
-void insert_at_tail_optimized(Node* head, Node* &tail, int val){
+void insert_at_tail_optimized(Node* &head, Node* &tail, int val){
     //step-1: create a new node which will be inserted
     Node* newNode = new Node(val); // creating new Node
 

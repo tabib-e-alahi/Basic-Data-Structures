@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 class Node{
     public:
@@ -11,19 +11,38 @@ class Node{
     }
 };
 
-void insert_at_tail(Node* &head,Node* &tail, int val){
+void delete_at_head(Node* &head, Node* &tail)
+{
+    if(head == NULL){
+        cout << "Singly linked list is already empty\n";
+        return;
+    }
+    Node* deleteNode = head;
+    //---------- this is my code:
+    if(head->next == NULL){
+        head = NULL;
+        tail = NULL;
+        delete deleteNode;
+        return;
+    }
+    //---------------------- upto this
+    head = head->next;
+    delete deleteNode;
+}
+
+void insert_at_tail(Node* &head, Node* &tail, int val){
+    //step-1: create a new node which will be inserted
     Node* newNode = new Node(val); // creating new Node
-    //corner case: if the list is empty then head->next will be NULL
-    // which will give errors
+
+    //if there no item in list then newNode will be both the head and tail
     if(head == NULL){
         head = newNode;
         tail = newNode;
         return;
     }
-    tail -> next = newNode;
-    tail = tail -> next;
+    tail->next = newNode;
+    tail = tail->next;//update tail
 }
-
 
 void print_linked_list(Node* head){
     // creating a tmp for storing the head
