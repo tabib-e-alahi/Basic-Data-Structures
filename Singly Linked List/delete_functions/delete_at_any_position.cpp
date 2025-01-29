@@ -11,24 +11,19 @@ class Node{
     }
 };
 
-void delete_at_head(Node* &head, Node* &tail)
+void delete_at_any_position(Node* &head, int idx)
 {
-    if(head == NULL){
-        cout << "Singly linked list is already empty\n";
-        return;
+    Node* tmp = head;
+    for(int i = 0; i < idx-1; i++){
+        tmp = tmp->next;
     }
-    Node* deleteNode = head;
-    //---------- this is my code:
-    if(head->next == NULL){
-        head = NULL;
-        tail = NULL;
-        delete deleteNode;
-        return;
-    }
-    //---------------------- upto this
-    head = head->next;
-    delete deleteNode;
+    Node* deleteNode = tmp->next;
+    //linking deleteNode next node with the prev node
+    tmp->next = tmp->next->next;
+    delete deleteNode;//clear from memory
+
 }
+
 
 void insert_at_tail(Node* &head, Node* &tail, int val){
     //step-1: create a new node which will be inserted
@@ -68,5 +63,10 @@ int main() {
     insert_at_tail(head, tail, val);
     }
 	print_linked_list(head);
+	int idx;
+	cin >> idx;
+	delete_at_any_position(head, idx);
+	print_linked_list(head);
 	return 0;
 }
+
