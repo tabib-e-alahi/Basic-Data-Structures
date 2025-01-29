@@ -15,6 +15,17 @@ public:
     }
 };
 
+void print_doubly_forward(Node* head)
+{
+    Node* tmp = head;
+    while(tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+}
+
 int main()
 {
     Node* head = new Node(10);
@@ -31,4 +42,7 @@ int main()
 
     b->next = tail;
     tail->prev = b;
+
+    print_doubly_forward(head);
 }
+
