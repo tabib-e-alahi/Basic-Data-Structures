@@ -15,14 +15,14 @@ public:
     }
 };
 
-void print_doubly_forward(Node* head)
+void print_doubly_backward(Node* tail)
 {
-     //may need to handle corner case if the list is empty(add if need)
-    Node* tmp = head;
+    //may need to handle corner case if the list is empty(add if need)
+    Node* tmp = tail;
     while(tmp != NULL)
     {
         cout << tmp->val << " ";
-        tmp = tmp->next;
+        tmp = tmp->prev;
     }
     cout << endl;
 }
@@ -44,6 +44,7 @@ int main()
     b->next = tail;
     tail->prev = b;
 
-    print_doubly_forward(head);
+    print_doubly_backward(tail);
 }
+
 
