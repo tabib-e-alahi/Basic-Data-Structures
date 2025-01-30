@@ -15,23 +15,17 @@ public:
     }
 };
 
-void delete_at_tail(Node* &head, Node* &tail)
+void delete_at_any_position(Node* &head, int idx)
 {
-    if(head == NULL)
+    Node* tmp = head;
+    for(int i = 1; i < idx; i++)
     {
-        cout << "List is already empty\n";
-        return;
+        tmp = tmp->next;
     }
-    Node* deleteNode = tail;
-    tail = tail->prev;
+    Node* deleteNode = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->prev = tmp;
     delete deleteNode;
-    // if there were only one node
-    if(tail == NULL)
-    {
-        head = NULL;
-        return;
-    }
-    tail->next = NULL;
 }
 
 void print_doubly(Node* head)
@@ -62,7 +56,7 @@ int main()
     tail->prev = b;
 
     print_doubly(head);
-    delete_at_tail(head, tail);
+    delete_at_any_position(head, 2);
     print_doubly(head);
 
 }
