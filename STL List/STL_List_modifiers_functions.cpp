@@ -9,16 +9,25 @@ int main()
     // l2 = l;
     // l2.assign(l.begin(),l.end());
 
-    // l.push_back(40);
-    // l.push_front(100);
+    // l.push_back(40); //insert at tail
+    // l.push_front(100); // insert at head
 
-    // l.pop_back();
-    // l.pop_back();
-    // l.pop_front();
+    // l.pop_back(); // delete from tail
+    // l.pop_front(); // delete from head
 
-    //l.insert(next(l.begin(),2), v.begin(),v.end());
+    //insert at specific position
+//    l.insert(next(l.begin(), 2),100);
+// inserting multiple element
+    //l.insert(next(l.begin(),2), l2.begin(),l2.end());
+    //l.insert(next(l.begin(),2), v.begin(),v.end()); // also can add vector to list
+
+    //delete element from a specific position:
+    //l.erase(next(l.begin(),3));
+    // multiple value erase:
     // l.erase(next(l.begin(),2), next(l.begin(),5));
+
     // cout << *next(l.begin(),1);
+
 
     // replace(l.begin(), l.end(),20,100);
 
