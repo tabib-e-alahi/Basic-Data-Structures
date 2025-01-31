@@ -6,6 +6,9 @@ int main()
 
     l.remove(10); // will remove all 10 from the list;
 
+    // sorting function
+    l.sort(); // ascending
+    l.sort(greater<int>());//descending
     for(int x: l)
     {
         cout << x << " ";
