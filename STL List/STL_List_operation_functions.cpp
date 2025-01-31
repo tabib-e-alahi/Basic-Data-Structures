@@ -10,7 +10,9 @@ int main()
     l.sort(); // ascending
     l.sort(greater<int>());//descending
 
-    l.unique(); // only work on sorted list, cz it compare adjacent elements
+    l.unique(); // only work on sorted list, cause it compare adjacent elements
+
+    l.reverse(); // reverse the list
 
     for(int x: l)
     {
