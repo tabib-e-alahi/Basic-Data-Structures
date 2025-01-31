@@ -9,6 +9,9 @@ int main()
     // sorting function
     l.sort(); // ascending
     l.sort(greater<int>());//descending
+
+    l.unique(); // only work on sorted list, cz it compare adjacent elements
+
     for(int x: l)
     {
         cout << x << " ";
