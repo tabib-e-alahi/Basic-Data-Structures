@@ -11,4 +11,8 @@ int main()
     //access i-th element
 //    cout << *next(l.begin(), i);
       cout << *(next(l.begin(), 3)) << endl;
+
+      // iterator functions use for : loop or traversing
+      l.begin(); // point to first element
+      l.end(); // point next of last element
 }
